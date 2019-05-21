@@ -220,7 +220,15 @@ public class mainPage {
             public void handle(ActionEvent event) {
                 int temp = Integer.valueOf(allPrice);
                 allPrice = String.valueOf(Integer.valueOf(price)+temp);
-                listNames.add(name);
+//                listNames.add(name);
+
+                //Заполнение списка пицц всеми параметрами
+                Item item = new Item();
+                item.name = name;
+                item.description = description;
+                item.price = price;
+                item.image = image;
+                selectedItems.add(item);
 
                 // Тестовый Alert, срабатывает при выборе пиццы
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
