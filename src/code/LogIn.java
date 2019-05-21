@@ -7,6 +7,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class LogIn extends mainPage{
 
     @FXML
@@ -18,11 +20,23 @@ public class LogIn extends mainPage{
     @FXML
     TextField textLogin;
 
+    public class Item{
+        String name = "";
+        String price = "";
+        String description = "";
+        String image = "";
+    }
+
+    private ArrayList<Item> allItems;
+    private ArrayList<Item> selectedItems;
+
+
     private String alert = "Пароль или логин не верны";
 
     // Пароль, логин
     private String login = "user";
     private String pass = "1";
+
 
     public static user type_user = user.NULL;
 

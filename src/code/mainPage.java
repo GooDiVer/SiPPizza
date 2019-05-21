@@ -44,6 +44,16 @@ public class mainPage {
     @FXML
     public FlowPane list;
 
+    public class Item{
+        String name = "";
+        String price = "";
+        String description = "";
+        String image = "";
+    }
+
+    private ArrayList<Item> allItems;
+    private ArrayList<Item> selectedItems;
+
     public user type_user = user.NULL;
 
     public ArrayList<String> listNames = new ArrayList<>();
