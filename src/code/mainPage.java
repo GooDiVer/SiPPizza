@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -43,6 +44,12 @@ public class mainPage {
     public Label userName;
     @FXML
     public FlowPane list;
+    @FXML
+    public Label counter;
+    @FXML
+    public Circle circle;
+
+    int count = 0;
 
     public class Item{
         String name = "";
@@ -65,6 +72,8 @@ public class mainPage {
                 btnLog.setVisible(true);
                 btnReg.setVisible(true);
                 basket.setVisible(true);
+                counter.setVisible(true);
+                circle.setVisible(true);
                 userName.setVisible(false);
                 addPizza.setVisible(false);
                 logoPizzaMaker.setVisible(false);
@@ -74,6 +83,8 @@ public class mainPage {
                 btnLog.setVisible(false);
                 btnReg.setVisible(false);
                 basket.setVisible(true);
+                counter.setVisible(true);
+                circle.setVisible(true);
                 userName.setVisible(true);
                 addPizza.setVisible(false);
                 logoPizzaMaker.setVisible(false);
@@ -83,6 +94,8 @@ public class mainPage {
                 btnLog.setVisible(false);
                 btnReg.setVisible(false);
                 basket.setVisible(false);
+                counter.setVisible(false);
+                circle.setVisible(false);
                 addPizza.setVisible(true);
                 userName.setVisible(false);
                 logoPizzaMaker.setVisible(true);
@@ -234,6 +247,9 @@ public class mainPage {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setHeaderText("Название: " + name + "\nЦена: " + price + "руб");
                 alert.showAndWait();
+
+                count++;
+                counter.setText(Integer.toString(count));
             }
         });
         item.getChildren().add(btn);
